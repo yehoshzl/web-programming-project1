@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Layout file including Bootstrap, Ajax, Jquery, sytlesheet -->
+
+<html lang="en">
+
+<head>
+    <!-- required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap! -->
+    <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- emojies -->
+    <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+    <link href="/static/favicon.ico" rel="icon">
+
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <!-- jquery, ajax, js bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <title>Alpe: {% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark justify-content-between bg-dark">
+
+        <a class="navbar-brand" href="/">
+            <img src="static/Alpe Dhuez.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Alpe
+        </a>
+        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  -->
+          <ul class="navbar-nav flex-row bd-navbar-nav ml-md-auto d-md-flex">
+            <li class="nav-item p-2">
+              <a class="nav-link active" href="/login">Log in </a>
+            </li>
+            <br>
+            <li class="nav-item p-2">
+              <a class="nav-link active" href="/register">Sign up</a>
+            </li>
+          </ul>
+
+      </nav>
+
+    {% if get_flashed_messages() %}
+        <header>
+            <div class="alert alert-primary border text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+        </header>
+    {% endif %}
+
+    <main class="container p-5">
+        {% block main %}
+
+        {% endblock %}
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+</body>
